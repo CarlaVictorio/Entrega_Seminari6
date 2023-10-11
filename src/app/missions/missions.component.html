@@ -1,0 +1,19 @@
+<h2>Missions</h2>
+<div>
+    <label for="new-mission">Mission name: </label>
+    <input id="new-mission" #missionName />
+  
+    <!-- (click) passes input value to add() and then clears the input -->
+    <button type="button" class="add-button" (click)="add(missionName.value); missionName.value=''">
+      Add mission
+    </button>
+</div>
+<ul class="missions">
+  <li *ngFor="let mission of missions">
+      <!--<span class="badge">{{mission.id}}</span> {{mission.name}}-->
+      <span class="badge">{{mission.name}}</span>
+   
+    <button type="button" class="delete" title="delete mission"
+      (click)="delete(mission)">x</button>
+  </li>
+</ul>
